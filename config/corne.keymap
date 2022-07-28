@@ -9,8 +9,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define TAPPING_TERM 175;
-#define COMBO_TIMEOUT 25;
+#define TAPPING_TERM 175
+#define COMBO_TIMEOUT 25
 
 &mt {
     tapping-term-ms = <TAPPING_TERM>;
@@ -37,7 +37,7 @@
                 compatible = "zmk,combos";
                 combo_grave {
                     timeout-ms = <COMBO_TIMEOUT>;
-                    key-positions = <1, 2>;
+                    key-positions = <;
                     bindings = <&kp GRAVE>;
                     layers = <0>;
                 };
