@@ -9,15 +9,18 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+// global config settings
 #define TAPPING_TERM 175
 #define QUICK_TAP 200
 #define COMBO_TIMEOUT 25
+
+// layer aliases
 #define L_DEFAULT 0
 #define L_NUM_SYM 1
 #define L_NAV_MED 2
 #define L_NUMPAD 3
-#define L_NUM_SYM 4
-#define L_GAMING 5
+//#define L_GAMING 4
+#define L_CONTROL 4
 
 &mt {
     tapping-term-ms = <TAPPING_TERM>;
@@ -36,7 +39,7 @@
                     label = "TAP_DANCE_TO_LAYER_3";
                     #binding-cells = <0>;
                     tapping-term-ms = <TAPPING_TERM>;
-                    bindings = <&kp SPACE>, <&to 3>;
+                    bindings = <&kp SPACE>, <&to L_NUMPAD>;
                 };
                 td1: tap_dance_1 {
                     compatible = "zmk,behavior-tap-dance";
@@ -72,7 +75,7 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                default_layer {
+                default_layer { // 0 (L_DEFAULT)
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | ESC  |
 // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  '  | SHFT |
@@ -107,10 +110,10 @@
 // |      | PDN | SLK |     |     | F12 |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &trans  &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6   &kp F7    &kp F8    &kp F9  &kp F10    &trans
-   &trans  &kp PG_UP    &kp SYSREQ   &trans       &kp K_VOL_UP &kp F11        &trans   &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-   &trans  &kp PG_DN    &kp SLCK     &kp K_MUTE   &kp K_VOL_DN &kp F12        &trans   &trans    &trans    &trans  &trans     &trans
-               	                     &trans       &trans       &mo 4          &trans   &trans    &trans
+   &trans  &kp F1       &kp F2       &kp F3       &kp F4       &kp F5               &kp F6   &kp F7    &kp F8    &kp F9  &kp F10    &trans
+   &trans  &kp PG_UP    &kp SYSREQ   &trans       &kp K_VOL_UP &kp F11              &trans   &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+   &trans  &kp PG_DN    &kp SLCK     &kp K_MUTE   &kp K_VOL_DN &kp F12              &trans   &trans    &trans    &trans  &trans     &trans
+               	                     &trans       &trans       &mo L_CONTROL        &trans   &trans    &trans
                         >;
                 };
 
