@@ -10,9 +10,9 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // global config settings
-#define TAPPING_TERM 175
+#define TAPPING_TERM 165
 #define QUICK_TAP 200
-#define COMBO_TIMEOUT 25
+#define COMBO_TIMEOUT 30
 
 // layer aliases
 #define L_DEFAULT 0
@@ -36,14 +36,14 @@
         behaviors {
                 td0: tap_dance_0 {
                     compatible = "zmk,behavior-tap-dance";
-                    label = "TAP_DANCE_TO_LAYER_3";
+                    label = "TAP_DANCE_TO_NUMPAD_LAYER";
                     #binding-cells = <0>;
                     tapping-term-ms = <TAPPING_TERM>;
                     bindings = <&kp SPACE>, <&to L_NUMPAD>;
                 };
                 td1: tap_dance_1 {
                     compatible = "zmk,behavior-tap-dance";
-                    label = "TAP_DANCE_TO_LAYER_4";
+                    label = "TAP_DANCE_TO_GAMING_LAYER";
                     #binding-cells = <0>;
                     tapping-term-ms = <TAPPING_TERM>;
                     bindings = <&kp BSPC>, <&to L_GAMING>;
@@ -84,15 +84,15 @@
 
                 default_layer { // 0 (L_DEFAULT)
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | ESC  |
-// | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  '  | SHFT |
-// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | CTRL |
+// |  ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  -   |
+// |  TAB |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
 //                    | ENT | GUI | BKS |   | SPC | DEL  | ALT |
                         bindings = <
-   &kp TAB    &kp Q        &kp W  &kp E         &kp R         &kp T                     &kp Y                &kp U          &kp I         &kp O    &kp P           &kp ESC
-   &kp LCTRL  &kp A        &kp S  &kp D         &mt LSHFT F   &kp G                     &kp H                &mt RSHFT J    &kp K         &kp L    &kp SQT         &kp RCTRL
-   &kp LSHFT  &mt LCTRL Z  &kp X  &kp C         &kp V         &kp B                     &kp N                &kp M          &kp COMMA     &kp DOT  &mt RCTRL FSLH  &kp RSHFT
-                                  &mt LALT RET  &mt LGUI ESC  &lt L_NUM_SYM BSPC        &lt L_NAV_MED SPACE  &mt RSHFT TAB  &mt RALT DEL
+   &kp ESC    &kp Q        &kp W  &kp E         &kp R         &kp T                     &kp Y                &kp U             &kp I         &kp O    &kp P           &kp MINUS
+   &kp TAB    &kp A        &kp S  &kp D         &mt LSHFT F   &kp G                     &kp H                &mt RSHFT J       &kp K         &kp L    &kp SEMI        &kp SQT
+   &kp LSHFT  &mt LCTRL Z  &kp X  &kp C         &kp V         &kp B                     &kp N                &kp M             &kp COMMA     &kp DOT  &mt RCTRL FSLH  &kp RSHFT
+                                  &mt LALT RET  &mt LGUI ESC  &lt L_NUM_SYM BSPC        &lt L_NAV_MED SPACE  &lt L_NUMPAD TAB  &mt RALT DEL
                         >;
                 };
 
@@ -103,10 +103,10 @@
 // |      |  `  |     |     |     |  \  |   |  ;  |  -  |  =  |  [  |  ]  |      |
 //                    |     |     |     |   |     |     |     |
                         bindings = <
-   &trans  &kp EXCL   &kp AT  &kp HASH  &kp DLLR  &kp PRCNT       &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
-   &trans  &kp N1     &kp N2  &kp N3    &kp N4    &kp N5          &kp N6     &kp N7     &kp N8           &kp N9    &kp N0    &trans
-   &trans  &kp GRAVE  &trans  &trans    &trans    &kp BSLH        &kp SEMI   &kp MINUS  &kp EQUAL        &kp LBKT  &kp RBKT  &trans
-                              &trans    &trans    &trans          &td0       &trans     &trans
+   &trans  &kp EXCL   &kp AT  &kp HASH  &kp DLLR      &kp PRCNT       &kp CARET  &kp AMPS      &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
+   &trans  &kp N1     &kp N2  &kp N3    &mt LSHFT N4  &kp N5          &kp N6     &mt RSHFT N7  &kp N8           &kp N9    &kp N0    &trans
+   &trans  &kp GRAVE  &trans  &trans    &trans        &kp BSLH        &kp SEMI   &kp MINUS     &kp EQUAL        &kp LBKT  &kp RBKT  &trans
+                              &trans    &trans        &trans          &td0       &trans        &trans
                         >;
                 };
 
@@ -117,10 +117,10 @@
 // |      | PDN | SLK |     |     | F12 |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &trans  &kp F1     &kp F2      &kp F3      &kp F4         &kp F5        &kp F6  &kp F7    &kp F8    &kp F9  &kp F10    &trans
-   &trans  &kp PG_UP  &kp SYSREQ  &trans      &kp K_VOL_UP   &kp F11       &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-   &trans  &kp PG_DN  &kp SLCK    &kp K_MUTE  &kp K_VOL_DN   &kp F12       &trans  &trans    &trans    &trans  &trans     &trans
-               	                  &trans      &mo L_CONTROL  &td1          &trans  &trans    &trans
+   &trans  &kp F1     &kp F2      &kp F3      &kp F4        &kp F5               &kp F6  &kp F7    &kp F8    &kp F9  &kp F10    &trans
+   &trans  &kp PG_UP  &kp SYSREQ  &trans      &kp K_VOL_UP  &kp F11              &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+   &trans  &kp PG_DN  &kp SLCK    &kp K_MUTE  &kp K_VOL_DN  &kp F12              &trans  &trans    &trans    &trans  &trans     &trans
+               	                  &trans      &td1          &mo L_CONTROL        &trans  &trans    &trans
                         >;
                 };
 
@@ -131,10 +131,10 @@
 // |      |     |     |     |     |     |   | NUM0 | NUM1 | NUM2 |  NUM3  |  .  |      |
 //                    |     |     | L0  |   | ENTR | BSPC |      |
                         bindings = <
-   &trans  &trans  &trans  &trans  &trans  &trans               &kp KP_MULTIPLY  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS  &trans
-   &trans  &trans  &trans  &trans  &trans  &trans               &kp KP_DIVIDE    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &trans
-   &trans  &trans  &trans  &trans  &trans  &trans               &kp KP_N0        &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT    &trans
-                           &trans  &trans  &to L_DEFAULT        &kp KP_ENTER     &kp BSPC   &trans
+   &trans  &trans  &trans  &trans  &trans  &trans        &kp KP_MULTIPLY  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS  &kp BSPC
+   &trans  &trans  &trans  &trans  &trans  &trans        &kp KP_DIVIDE    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &trans
+   &trans  &trans  &trans  &trans  &trans  &trans        &kp KP_N0        &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT    &KP_ENTER
+                           &trans  &trans  &trans        &trans           &trans     &trans
                         >;
                 };
 
