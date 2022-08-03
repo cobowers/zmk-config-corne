@@ -3,8 +3,8 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/cobowers/zmk-mouse-ftc
   projects:
-    - name: zmk
-      remote: zmkfirmware
+    - name: zmk-mouse-ftc
+      remote: cobowers
       revision: main
       import: app/west.yml
   self:
