@@ -14,7 +14,13 @@
 #define TAPPING_TERM 185
 #define QUICK_TAP 200
 #define COMBO_TIMEOUT 30
+
+// mouse emulation configuration
 #define MOUSE_MAX_SPEED 3000
+#define M_UP MOVE_VERT(-MOUSE_MAX_SPEED)
+#define M_DOWN MOVE_VERT(MOUSE_MAX_SPEED)
+#define M_LEFT MOVE_HOR(-MOUSE_MAX_SPEED)
+#define M_RIGHT MOVE_HOR(MOUSE_MAX_SPEED)
 
 // layer aliases
 #define L_DEFAULT 0
@@ -122,9 +128,9 @@
 // |      | PDN | SLK |     |     | F12 |   | RCLK | MLFT | MDWN | MUP | MRGT |      |
 //                    | GUI |     | SPC |   |      |      |      |
                         bindings = <
-   &trans  &kp F1     &kp F2      &kp F3      &kp F4        &kp F5               &kp F6     &kp F7          &kp F8          &kp F9        &kp F10          &trans
-   &trans  &kp PG_UP  &kp SYSREQ  &trans      &kp K_VOL_UP  &kp F11              &mkp LCLK  &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &trans
-   &trans  &kp PG_DN  &kp SLCK    &kp K_MUTE  &kp K_VOL_DN  &kp F12              &mkp RCLK  &mmv MOVE_HOR(-MOUSE_MAX_SPEED)  &mmv MOVE_VERT(MOUSE_MAX_SPEED)  &mmv MOVE_VERT(-MOUSE_MAX_SPEED)  &mmv MOVE_HOR(MOUSE_MAX_SPEED)  &trans
+   &trans  &kp F1     &kp F2      &kp F3      &kp F4        &kp F5               &kp F6     &kp F7       &kp F8       &kp F9     &kp F10       &trans
+   &trans  &kp PG_UP  &kp SYSREQ  &trans      &kp K_VOL_UP  &kp F11              &mkp LCLK  &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT     &trans
+   &trans  &kp PG_DN  &kp SLCK    &kp K_MUTE  &kp K_VOL_DN  &kp F12              &mkp RCLK  &mmv M_LEFT  &mmv M_DOWN  &mmv M_UP  &mmv M_RIGHT  &trans
                	                  &trans      &td1          &mo L_CONTROL        &trans     &trans          &trans
                         >;
                 };
