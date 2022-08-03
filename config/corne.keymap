@@ -33,7 +33,7 @@
     quick-tap-ms = <QUICK_TAP>;
 };
 &mmv {
-    time-to-max-speed-ms = <1000>;
+    time-to-max-speed-ms = <500>;
 };
 
 / {
