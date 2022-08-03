@@ -1,7 +1,7 @@
 manifest:
   remotes:
     - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+      url-base: git@github.com/cobowers/zmk-mouse-ftc
   projects:
     - name: zmk
       remote: zmkfirmware
