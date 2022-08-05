@@ -31,12 +31,12 @@
 #define L_CONTROL 5
 
 &mt {
-    flavor = "hold-preferred"
+    flavor = "hold-preferred";
     tapping-term-ms = <TAPPING_TERM>;
 };
 
 &lt {
-    flavor = "balanced"
+    flavor = "balanced";
     tapping-term-ms = <TAPPING_TERM>;
     quick-tap-ms = <QUICK_TAP>;
 };
