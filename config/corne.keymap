@@ -31,7 +31,7 @@
 #define L_CONTROL 5
 
 &mt {
-    flavor = "hold-preferred";
+    flavor = "balanced";
     tapping-term-ms = <TAPPING_TERM>;
 };
 
