@@ -101,6 +101,13 @@
                     tapping-term-ms = <TAPPING_TERM>;
                     bindings = <&kp X>, <&th LC(X) X>;
                 };
+                th_prnt_win: tap_hold_print_window {
+                    compatible = "zmk,behavior-tap-dance";
+                    label = "TAP_HOLD_PRINT_WINDOW";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <TAPPING_TERM>;
+                    bindings = <&kp PSCRN>, <&kp LA(PSCRN)>;
+                };
 
         };
 
@@ -164,10 +171,10 @@
 // |      | PDN | SLK |     |     | F12 |   | RCLK | MLFT | MDWN | MUP | MRGT |      |
 //                    | GUI |     | SPC |   |      |      |      |
                         bindings = <
-   &trans  &kp F1     &kp F2      &kp F3      &kp F4        &kp F5               &kp F6     &kp F7       &kp F8       &kp F9     &kp F10       &trans
-   &trans  &kp PG_UP  &kp PSCRN   &trans      &kp C_VOL_UP  &kp F11              &mkp LCLK  &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT     &trans
-   &trans  &kp PG_DN  &kp SLCK    &kp C_MUTE  &kp C_VOL_DN  &kp F12              &mkp RCLK  &mmv M_LEFT  &mmv M_DOWN  &mmv M_UP  &mmv M_RIGHT  &trans
-               	                  &trans      &td1          &mo L_CONTROL        &trans     &trans          &trans
+   &trans  &kp F1     &kp F2         &kp F3      &kp F4        &kp F5               &kp F6     &kp F7       &kp F8       &kp F9     &kp F10       &trans
+   &trans  &kp PG_UP  &th_print_win  &trans      &kp C_VOL_UP  &kp F11              &mkp LCLK  &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT     &trans
+   &trans  &kp PG_DN  &kp SLCK       &kp C_MUTE  &kp C_VOL_DN  &kp F12              &mkp RCLK  &mmv M_LEFT  &mmv M_DOWN  &mmv M_UP  &mmv M_RIGHT  &trans
+               	                     &trans      &td1          &mo L_CONTROL        &trans     &trans          &trans
                         >;
                 };
 
