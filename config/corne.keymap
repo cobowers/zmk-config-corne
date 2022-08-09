@@ -101,7 +101,7 @@
                     tapping-term-ms = <TAPPING_TERM>;
                     bindings = <&kp X>, <&th LC(X) X>;
                 };
-                th_prnt_win: tap_hold_print_window {
+                th_print_win: tap_hold_print_window {
                     compatible = "zmk,behavior-tap-dance";
                     label = "TAP_HOLD_PRINT_WINDOW";
                     #binding-cells = <0>;
