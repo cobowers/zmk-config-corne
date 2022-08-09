@@ -31,7 +31,8 @@
 #define L_CONTROL 5
 
 &mt {
-    flavor = "balanced";
+    //flavor = "balanced";
+    flavor = "tap-preferred";
     tapping-term-ms = <TAPPING_TERM>;
 };
 
@@ -40,6 +41,7 @@
     tapping-term-ms = <TAPPING_TERM>;
     quick-tap-ms = <QUICK_TAP>;
 };
+
 &mmv {
     time-to-max-speed-ms = <750>;
 };
@@ -47,6 +49,16 @@
 / {
 
         behaviors {
+                // embedded function for tap-and-hold functionality
+                th: tap_hold {
+                    compatible = "zmk,behavior-hold-tap";
+                    label = "TAP_THEN_HOLD";
+                    #binding-cells = <2>;
+                    tapping-term-ms = <200>;
+                    quick-tap-ms = <QUICK_TAP>;
+                    flavor = "tap-preferred";
+                    bindings = <&kp>, <&kp>;
+                };
                 td0: tap_dance_0 {
                     compatible = "zmk,behavior-tap-dance";
                     label = "TAP_DANCE_TO_NUMPAD_LAYER";
@@ -68,6 +80,28 @@
                     tapping-term-ms = <TAPPING_TERM>;
                     bindings = <&reset>, <&bootloader>;
                 };
+                th_c: tap_hold_c {
+                    compatible = "zmk,behavior-tap-dance";
+                    label = "TAP_HOLD_CTRL_C";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <TAPPING_TERM>;
+                    bindings = <&kp C>, <&th LC(C) C>;
+                };
+                th_v: tap_hold_v {
+                    compatible = "zmk,behavior-tap-dance";
+                    label = "TAP_HOLD_CTRL_V";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <TAPPING_TERM>;
+                    bindings = <&kp V>, <&th LC(V) V>;
+                };
+                th_x: tap_hold_x {
+                    compatible = "zmk,behavior-tap-dance";
+                    label = "TAP_HOLD_CTRL_X";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <TAPPING_TERM>;
+                    bindings = <&kp X>, <&th LC(X) X>;
+                };
+
         };
 
         combos {
