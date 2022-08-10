@@ -106,7 +106,7 @@
                     label = "TAP_HOLD_PRINT_WINDOW";
                     #binding-cells = <0>;
                     tapping-term-ms = <TAPPING_TERM>;
-                    bindings = <&kp LA(PSCRN)>, <&kp PSCRN>;
+                    bindings = <&kp RA(PSCRN)>, <&kp PSCRN>;
                 };
 
         };
