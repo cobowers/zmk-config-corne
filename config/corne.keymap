@@ -12,7 +12,7 @@
 
 // global config settings
 #define TAPPING_TERM 190
-#define QUICK_TAP 200
+#define QUICK_TAP 185 
 #define COMBO_TIMEOUT 30
 
 // mouse emulation configuration
