@@ -98,6 +98,15 @@
                     flavor = "tap-preferred";
                     bindings = <&kp>, <&kp>;
                 };
+                th_macro_a: tap_hold_macro_a {
+                    compatible = "zmk,behavior-hold-tap";
+                    label = "TAP_THEN_HOLD_MACRO_A";
+                    #binding-cells = <2>;
+                    tapping-term-ms = <200>;
+                    quick-tap-ms = <QUICK_TAP>;
+                    flavor = "tap-preferred";
+                    bindings = <&kp LC(C)>, <&m_aa>;
+                };
                 td0: tap_dance_0 {
                     compatible = "zmk,behavior-tap-dance";
                     label = "TAP_DANCE_TO_NUMPAD_LAYER";
@@ -124,7 +133,7 @@
                     label = "TAP_HOLD_CTRL_A";
                     #binding-cells = <0>;
                     tapping-term-ms = <TAPPING_TERM>;
-                    bindings = <&kp A>, <&th LC(A) &m_aa>;
+                    bindings = <&kp A>, <&th_macro_a>;
                 };
                 th_c: tap_hold_c {
                     compatible = "zmk,behavior-tap-dance";
