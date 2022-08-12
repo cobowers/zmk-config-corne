@@ -48,6 +48,45 @@
 
 / {
 
+        macros{
+            m_aa: m_aa {
+                label = "MACRO_DOUBLE_A";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_press &kp A>
+                    , <&macro_press &kp A>
+                    ;
+            };
+            m_cc: m_cc {
+                label = "MACRO_DOUBLE_C";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_press &kp C>
+                    , <&macro_press &kp C>
+                    ;
+            };
+            m_vv: m_vv {
+                label = "MACRO_DOUBLE_V";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_press &kp V>
+                    , <&macro_press &kp V>
+                    ;
+            };
+            m_xx: m_xx {
+                label = "MACRO_DOUBLE_X";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_press &kp X>
+                    , <&macro_press &kp X>
+                    ;
+            };
+        };
+
         behaviors {
                 // embedded function for tap-and-hold functionality
                 th: tap_hold {
@@ -85,28 +124,28 @@
                     label = "TAP_HOLD_CTRL_A";
                     #binding-cells = <0>;
                     tapping-term-ms = <TAPPING_TERM>;
-                    bindings = <&kp A>, <&th LC(A) A>;
+                    bindings = <&kp A>, <&th LC(A) &m_aa>;
                 };
                 th_c: tap_hold_c {
                     compatible = "zmk,behavior-tap-dance";
                     label = "TAP_HOLD_CTRL_C";
                     #binding-cells = <0>;
                     tapping-term-ms = <TAPPING_TERM>;
-                    bindings = <&kp C>, <&th LC(C) C>;
+                    bindings = <&kp C>, <&th LC(C) &m_cc>;
                 };
                 th_v: tap_hold_v {
                     compatible = "zmk,behavior-tap-dance";
                     label = "TAP_HOLD_CTRL_V";
                     #binding-cells = <0>;
                     tapping-term-ms = <TAPPING_TERM>;
-                    bindings = <&kp V>, <&th LC(V) V>;
+                    bindings = <&kp V>, <&th LC(V) &m_vv>;
                 };
                 th_x: tap_hold_x {
                     compatible = "zmk,behavior-tap-dance";
                     label = "TAP_HOLD_CTRL_X";
                     #binding-cells = <0>;
                     tapping-term-ms = <TAPPING_TERM>;
-                    bindings = <&kp X>, <&th LC(X) X>;
+                    bindings = <&kp X>, <&th LC(X) &m_xx>;
                 };
                 th_print_win: tap_hold_print_window {
                     compatible = "zmk,behavior-tap-dance";
