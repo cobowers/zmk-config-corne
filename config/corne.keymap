@@ -120,7 +120,7 @@
                     tapping-term-ms = <200>;
                     quick-tap-ms = <QUICK_TAP>;
                     flavor = "tap-preferred";
-                    bindings = <&kp>, <&m_z;>;
+                    bindings = <&kp>, <&m_z>;
                 };
                 td0: tap_dance_0 {
                     compatible = "zmk,behavior-tap-dance";
