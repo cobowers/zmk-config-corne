@@ -12,7 +12,7 @@
 
 // global config settings
 #define TAPPING_TERM 190
-#define QUICK_TAP 185 
+#define QUICK_TAP 200
 #define COMBO_TIMEOUT 30
 
 // mouse emulation configuration
@@ -82,7 +82,7 @@
 		    label = "HOMEROW_SHIFT";
 		    #binding-cells = <2>;
 		    tapping-term-ms = <165>;
-		    quick_tap_ms = <150>;
+		    quick_tap_ms = <QUICK_TAP>;
 		    flavor = "balanced";
 		    bindings = <&kp>, <&kp>;
 		};
