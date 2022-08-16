@@ -31,8 +31,8 @@
 #define L_CONTROL 5
 
 &mt {
-    flavor = "balanced";
-    //flavor = "tap-preferred";
+    //flavor = "balanced";
+    flavor = "tap-preferred";
     tapping-term-ms = <TAPPING_TERM>;
 };
 
@@ -81,7 +81,7 @@
 		    compatible = "zmk,behavior-hold-tap";
 		    label = "HOMEROW_SHIFT";
 		    #binding-cells = <2>;
-		    tapping-term-ms = <165>;
+		    tapping-term-ms = <185>;
 		    quick_tap_ms = <QUICK_TAP>;
 		    flavor = "balanced";
 		    bindings = <&kp>, <&kp>;
