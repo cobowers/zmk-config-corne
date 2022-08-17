@@ -76,6 +76,26 @@
         };
 
         behaviors {
+                // home row dual-function mods should not fire unexpectedly
+		hm: homerow_mod {
+		    compatible = "zmk,behavior-hold-tap";
+		    label = "HOMEROW_MOD";
+		    #binding-cells = <2>;
+		    tapping-term-ms = <175>;
+		    quick_tap_ms = <QUICK_TAP>;
+		    flavor = "tap-preferred";
+		    bindings = <&kp>, <&kp>;
+		};
+                // dual-purpose alt keys should favor alt (hold) rather than tap
+		hpm: hold_preferred_modifiers {
+		    compatible = "zmk,behavior-hold-tap";
+		    label = "hpm";
+		    #binding-cells = <2>;
+		    tapping-term-ms = <150>;
+		    quick_tap_ms = <QUICK_TAP>;
+		    flavor = "tap-preferred";
+		    bindings = <&kp>, <&kp>;
+		};
                 // home row shift mod requires some special settings to feel just right
 		hs: homerow_shift {
 		    compatible = "zmk,behavior-hold-tap";
@@ -86,6 +106,7 @@
 		    flavor = "balanced";
 		    bindings = <&kp>, <&kp>;
 		};
+
                 // embedded functions for tap-and-hold functionality
                 th_macro_a: tap_hold_macro_a {
                     compatible = "zmk,behavior-hold-tap";
@@ -226,10 +247,10 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  K  |  M   |  ,  |  .  |  /  | SHFT |
 //                    | ENT | GUI | BKS |   | SPC | DEL  | ALT |
                         bindings = <
-   &kp ESC    &kp Q        &kp W  &kp J         &kp R          &kp T                     &kp Y                &kp U             &kp I         &kp O    &kp P           &kp MINUS
-   &kp TAB    &th_a        &kp S  &mt LGUI D    &hs LSHFT F    &kp G                     &kp H                &hs RSHFT N       &mt RGUI E    &kp L    &kp SQT         &kp SEMI
-   &kp LSHFT  &mt LCTRL Z  &th_x  &th_c         &th_v          &kp B                     &kp K                &kp M             &kp COMMA     &kp DOT  &mt RCTRL FSLH  &kp RSHFT
-                                  &mt LALT RET  &mt LSHFT ESC  &lt L_NUM_SYM BSPC        &lt L_NAV_MED SPACE  &mt L_NUMPAD TAB  &mt RALT DEL
+   &kp ESC    &kp Q        &kp W  &kp J          &kp R          &kp T                     &kp Y                &kp U             &kp I          &kp O    &kp P           &kp MINUS
+   &kp TAB    &th_a        &kp S  &hm LGUI D     &hs LSHFT F    &kp G                     &kp H                &hs RSHFT N       &hm RGUI E     &kp L    &kp SQT         &kp SEMI
+   &kp LSHFT  &hm LCTRL Z  &th_x  &th_c          &th_v          &kp B                     &kp K                &kp M             &kp COMMA      &kp DOT  &hm RCTRL FSLH  &kp RSHFT
+                                  &hpm LALT RET  &mt LSHFT ESC  &lt L_NUM_SYM BSPC        &lt L_NAV_MED SPACE  &mt L_NUMPAD TAB  &hpm RALT DEL
                         >;
                 };
 
