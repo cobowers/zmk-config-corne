@@ -81,7 +81,7 @@
 		    compatible = "zmk,behavior-hold-tap";
 		    label = "HOMEROW_MOD";
 		    #binding-cells = <2>;
-		    tapping-term-ms = <175>;
+		    tapping-term-ms = <195>;
 		    quick_tap_ms = <QUICK_TAP>;
 		    flavor = "tap-preferred";
 		    bindings = <&kp>, <&kp>;
@@ -91,9 +91,9 @@
 		    compatible = "zmk,behavior-hold-tap";
 		    label = "hpm";
 		    #binding-cells = <2>;
-		    tapping-term-ms = <150>;
+		    tapping-term-ms = <175>;
 		    quick_tap_ms = <QUICK_TAP>;
-		    flavor = "tap-preferred";
+		    flavor = "hold-preferred";
 		    bindings = <&kp>, <&kp>;
 		};
                 // home row shift mod requires some special settings to feel just right
