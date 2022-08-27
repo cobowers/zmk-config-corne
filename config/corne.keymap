@@ -242,15 +242,15 @@
 
                 default_layer { // 0 (L_DEFAULT)
 // -----------------------------------------------------------------------------------------
-// |  ESC |  Q  |  W  |  F  |  R  |  G  |   |  Y  |  U   |  I  |  O  |  P  |  -   |
-// |  TAB |  A  |  S  |  D  |  T  |  J  |   |  H  |  N   |  E  |  L  |  ;  |  '   |
+// |  ESC |  Q  |  W  |  F  |  J  |  G  |   |  Y  |  U   |  I  |  O  |  P  |  -   |
+// |  TAB |  A  |  R  |  S  |  T  |  D   |   |  H  |  N   |  E  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  K  |  M   |  ,  |  .  |  /  | SHFT |
 //                    | ENT | GUI | BKS |   | SPC | DEL  | ALT |
                         bindings = <
-   &kp ESC    &kp Q        &kp W  &kp F          &kp R          &kp G                     &kp Y                &kp U             &kp I          &kp O    &kp P           &kp MINUS
-   &kp TAB    &th_a        &kp S  &hm LGUI D     &hs LSHFT T    &kp J                     &kp H                &hs RSHFT N       &hm RGUI E     &kp L    &kp SQT         &kp SEMI
+   &kp ESC    &kp Q        &kp W  &kp F          &kp J          &kp G                     &kp Y                &kp U             &kp I          &kp O    &kp P           &kp MINUS
+   &kp TAB    &th_a        &kp R  &hm LGUI S     &hs LSHFT T    &kp D                     &kp H                &hs RSHFT N       &hm RGUI E     &kp L    &kp SQT         &kp SEMI
    &kp LSHFT  &hm LCTRL Z  &th_x  &th_c          &th_v          &kp B                     &kp K                &kp M             &kp COMMA      &kp DOT  &hm RCTRL FSLH  &kp RSHFT
-                                  &hpm LALT RET  &mt LSHFT ESC  &lt L_NUM_SYM BSPC        &lt L_NAV_MED SPACE  &mt L_NUMPAD TAB  &hpm RALT DEL
+                                  &hpm LALT RET  &mt LSHFT ESC  &lt L_NUM_SYM BSPC        &lt L_NAV_MED SPACE  &lt L_NUMPAD TAB  &hpm RALT DEL
                         >;
                 };
 
