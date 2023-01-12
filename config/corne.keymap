@@ -156,7 +156,8 @@
                     label = "TAP_DANCE_TO_GAMING_LAYER";
                     #binding-cells = <0>;
                     tapping-term-ms = <TAPPING_TERM>;
-                    bindings = <&kp BSPC>, <&to L_GAMING>;
+                    bindings = <&kp ESC>, <&to L_GAMING>;
+
                 };
                 td2: tap_dance_2 {
                     compatible = "zmk,behavior-tap-dance";
@@ -250,7 +251,7 @@
    &kp ESC    &kp Q  &kp W       &kp F          &kp P          &kp B                     &kp J                &kp L             &kp U          &kp Y         &kp SQT         &kp MINUS
    &kp TAB    &th_a  &hm LGUI R  &hm LALT S     &hs LSHFT T    &kp G                     &kp M                &hs RSHFT N       &hm RALT E     &hm RGUI I    &hm RCTRL O     &kp SEMI
    &kp LSHFT  &kp Z  &th_x       &th_c          &kp D          &th_v                     &kp K                &kp H             &kp COMMA      &kp DOT       &kp FSLH        &kp RSHFT
-                                 &hpm LALT RET  &mt LSHFT ESC  &lt L_NUM_SYM BSPC        &lt L_NAV_MED SPACE  &lt L_NUMPAD TAB  &hpm RALT DEL
+                                 &kp RET        &mt LSHFT ESC  &lt L_NUM_SYM BSPC        &lt L_NAV_MED SPACE  &lt L_NUMPAD TAB  &kp DEL
                         >;
                 };
 
@@ -303,10 +304,10 @@
 // |      | CTRL |  X  |  C  |  V  |  B  |   |     |     |     |     |     |      |
 //                     |     |     | SPC |   | L0  |     |     |
                         bindings = <
-   &trans  &kp TAB     &kp Q  &kp W   &kp E   &kp R            &trans         &trans  &trans  &trans  &trans  &trans
-   &trans  &kp LSHIFT  &kp A  &kp S   &kp D   &kp F            &trans         &trans  &trans  &trans  &trans  &trans
-   &trans  &kp LCTRL   &kp X  &kp C   &kp V   &kp B            &trans         &trans  &trans  &trans  &trans  &trans
-                              &trans  &trans  &kp SPACE        &to L_DEFAULT  &trans  &trans
+   &kp TAB     &kp T  &kp Q  &kp W   &kp E   &kp R            &trans         &trans  &trans  &trans  &trans  &trans
+   &kp LSHIFT  &kp G  &kp A  &kp S   &kp D   &kp F            &trans         &trans  &trans  &trans  &trans  &trans
+   &kp LCTRL   &kp Z  &kp X  &kp C   &kp V   &kp B            &trans         &trans  &trans  &trans  &trans  &trans
+                             &trans  &trans  &kp SPACE        &to L_DEFAULT  &trans  &trans
                         >;
                 };
 
