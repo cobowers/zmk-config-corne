@@ -66,13 +66,13 @@
 	};
 	combo_semicolon {
 	    timeout-ms = <COMBO_TIMEOUT>;
-	    key-positions = <22 23>;
+	    key-positions = <21 22>;
 	    bindings = <&kp SEMI>;
 	    layers = <0>;
 	};
 	combo_capsword {
 	    timeout-ms = <COMBO_TIMEOUT>;
-	    key-positions = <16 20>;
+	    key-positions = <16 19>;
 	    bindings = <&caps_word>;
 	    layers = <0>;
 	};
